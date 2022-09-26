@@ -11,10 +11,13 @@ function connect {
   while :; do 
     echo start
     while read line; do 
+	  header=$(echo $line | cut -d ',' -f 1-14)	
+	  name=$(echo $line | cut -d ',' -f 1)	
+	  echo "$header"
       line=$(echo $line | cut -d ',' -f 15)
       line=$(echo $line | tr -d '\r')
       openvpn <(echo "$line" | base64 -d) ;
-    done < <(curl -s $VPNGATE_URL | grep ,Japan,JP, | grep -v public-vpn- | sort -R )
+    done < <(curl -s $VPNGATE_URL | grep ,Japan,JP, | grep -v public-vpn- | sort -t ',' -k5 -n -r | head -10 | sort -R)
     echo end
   done
 }
