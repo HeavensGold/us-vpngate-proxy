@@ -11,6 +11,7 @@ RUN apk add --no-cache \
     rename .new '' /etc/privoxy/*new
 
 COPY start.sh /bin/
+COPY iptables.sh /bin/
 
 EXPOSE 8118
 
