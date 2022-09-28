@@ -1,4 +1,6 @@
-# ja-vpngate-proxy
+# us-vpngate-proxy
+
+This is a US version of ja-vpngate-proxy(forked, non official). Original source code:  https://github.com/tantan-tanuki/ja-vpngate-proxy)
 
 [VPNGate](http://www.vpngate.net/api/iphone/)から日本のVPNサーバだけを抽出してランダムに接続します  
 ブラウザのプロキシ設定でlocalhost:8118を設定することで使用できます
