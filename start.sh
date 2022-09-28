@@ -35,7 +35,7 @@ connect &
 # vpn check
 
 while :; do
-  sleep 5
+  sleep 12
   AFTER_IP=$(global_ip)
   result=$?
   echo "before=$BEFORE_IP after=$AFTER_IP"
