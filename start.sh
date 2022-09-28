@@ -19,7 +19,7 @@ function connect {
       line=$(echo $line | cut -d ',' -f 15)
       line=$(echo $line | tr -d '\r')
       openvpn <(echo "$line" | base64 -d);
-    done < <(curl -s $VPNGATE_URL | grep ,Japan,JP, | grep -v public-vpn- | sort -t ',' -k5 -n -r | head -10 | sort -R)
+    done < <(curl -s $VPNGATE_URL | grep ",United States,JP," | grep -v public-vpn- | sort -t ',' -k5 -n -r | head -5 | sort -R)
     echo end
   done
 }
@@ -27,7 +27,7 @@ function connect {
 BEFORE_IP="$(global_ip)"
 
 # start proxy
-privoxy <(grep -v listen-address /etc/privoxy/config ; echo listen-address  0.0.0.0:8118) &
+privoxy <(grep -v listen-address /etc/privoxy/config ; echo listen-address  0.0.0.0:8119) &
 
 # connect vpn
 connect &

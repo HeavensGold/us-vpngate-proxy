@@ -13,6 +13,6 @@ RUN apk add --no-cache \
 COPY start.sh /bin/
 COPY iptables.sh /bin/
 
-EXPOSE 8118
+EXPOSE 8119
 
 CMD [ "start.sh" ]
